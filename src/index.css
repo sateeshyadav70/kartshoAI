@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    background:
+      radial-gradient(circle at top, rgba(34, 211, 238, 0.18), transparent 36%),
+      radial-gradient(circle at bottom, rgba(20, 184, 166, 0.1), transparent 42%),
+      linear-gradient(180deg, #03070b 0%, #040b12 52%, #020306 100%);
+    color: #f4f1ff;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    color-scheme: dark;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.38);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 180ms ease-out;
+  }
+}
